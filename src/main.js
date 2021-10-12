@@ -1,8 +1,16 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import { store } from "./store/store";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+//
+// Firebase
+import { firestorePlugin } from "vuefire";
+
+Vue.use(firestorePlugin);
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  store,
+  render: h => h(App)
+}).$mount("#app");
